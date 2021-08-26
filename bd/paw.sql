@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-08-2021 a las 17:06:13
+-- Tiempo de generación: 26-08-2021 a las 17:37:10
 -- Versión del servidor: 10.4.17-MariaDB
--- Versión de PHP: 7.3.26
+-- Versión de PHP: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,9 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `usuarios` (
   `idusuario` int(11) NOT NULL,
-  `usuario` varchar(20) DEFAULT NULL,
+  `usuario` varchar(50) DEFAULT NULL,
   `clave` varchar(255) DEFAULT NULL,
-  `token` varchar(10) DEFAULT NULL,
+  `token` varchar(12) DEFAULT NULL,
   `tipo` int(11) DEFAULT NULL,
   `estado` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -41,8 +41,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`idusuario`, `usuario`, `clave`, `token`, `tipo`, `estado`) VALUES
-(2, 'Emerson', '$2y$10$xWmn4dsDfemsSVJkS8.fFuZ9nSr/BezT6Zsa/kkwkYQnXwQuENQYq', NULL, 1, 1),
-(3, 'Ana', '$2y$10$rFxe2WDXUJ/n0djlJu4U7uP9xd8YR3uiVYZYIvVsXmT/RCEihFAUC', NULL, 2, 1);
+(1, 'kenia', '$2y$10$IeUERskcYpjI63c0XmoFXue3GQsZNFl5064nc0MhAqT6n6acTz7Pm', NULL, 1, 1),
+(2, 'admi', '$2y$10$N3rUuw8FI/Kgl8/f9gPbi.yG9zGi.vp9jZEnU7sebfvq7Ei.Uuiua', NULL, 2, 1);
 
 --
 -- Índices para tablas volcadas
@@ -62,7 +62,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
