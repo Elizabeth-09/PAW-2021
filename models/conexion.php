@@ -5,16 +5,16 @@
         {
       if(strtoupper(substr(PHP_OS,0,3)) == "WIN")
       {
-          $user ="root";
-          $pass ="";
+          $user ="poo";
+          $pass ="poo";
           $host ="localhost";
           $bd ="paw"; 
 
       }
       else
       {
-        $user ="root";
-        $pass ="passw";
+        $user ="poo";
+        $pass ="poo";
         $host ="localhost";
         $bd ="paw";
       }
