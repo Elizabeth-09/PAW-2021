@@ -23,15 +23,15 @@ $redic->Admin();
     <script src="../../public/js/alertify.js"></script>    
     <script src="../../public/js/jquery-1.9.1.min.js"></script>
     <script src="../../public/js/bootstrap.min.js"></script>
-    <script src="../public/js/funciones-navbar.js"></script>
+    <script src="../../public/js/funciones-navbar.js"></script>
     <script src="https://kit.fontawesome.com/05f4903dc9.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <?php include 'navbar/navbar.php';?>
-    <div class="container-fluid">
+    <div class="container-fluid" id="contenido">
         <div class="alert alert-success" style="width: 400px;">
+        <h6><b>Bienvenido/a <?php echo $user; ?></b></h6>
         </div>
     </div>
-    <h6><b>Bienvenido/a <?php echo $user; ?></b></h6>
 </body>
 </html>

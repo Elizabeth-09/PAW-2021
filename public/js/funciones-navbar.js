@@ -1,7 +1,17 @@
 $(document).ready(function() {
-    /*Btn salir */
-    $(".exit-sys").click(function(){
-        alert("Btn Salir");
-
+    /*Cargar vista de usuarios*/
+    $(".user").click(function(event){
+        $("#contenido").load("usuarios/principal.php");
+        event.preventDefault();
     });
+    /*Btn Salir */
+    $(".exit-sys").click(function() {
+       if (confirm('Seguro/a en cerrar sesion'))
+       {
+           location.href = "../../index.php";
+    } else {
+           alert('Cierre de sesion cancelada...');
+       }
+    });
+
 });
