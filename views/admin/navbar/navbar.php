@@ -16,7 +16,7 @@
       </li>
     </ul>
     <span class="navbar-text">
-        <a href="" class="btn btn-danger">Salir</a>
+        <a href="" class="btn btn-danger exit-sys">Salir</a>
     </span>
   </div>
 </nav>
