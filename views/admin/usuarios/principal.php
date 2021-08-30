@@ -8,12 +8,13 @@
         <div id="result-form">
         <form id="data-user" style="width: 500px;">
         <div class="input-group mb-3">
-  <div class="input-group-prepend">
+  
+        <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">Usuario: </span>
     </div>
   <input type="text" name="user" class="form-control" placeholder="Usuario" required="ON">
     </div>
-
+    
     <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">Contraseña: </span>
@@ -25,6 +26,7 @@
     <div class="input-group-prepend">
         <label class="input-group-text" for="inputGroupSelect01">Tipo Usuario</label>
     </div>
+
     <select class="custom-select" name="tipo_user" id="tipo-user">
         <option value="0" disabled selected>Seleccione Tipo</option>
         <option value="1">Administrador</option>

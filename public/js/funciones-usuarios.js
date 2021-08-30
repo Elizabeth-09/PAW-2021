@@ -9,7 +9,7 @@ $(document).ready(function(){
         } 
         else
         {
-            var formData = FormData(document.getElementById("data-user"));
+            var formData = new FormData(document.getElementById("data-user"));
             formData.append("dato","valor");
 
             $.ajax({
