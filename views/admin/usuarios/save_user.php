@@ -16,11 +16,11 @@ $conexion = $objeto->get_conexion();
      $campos = " usuario, clave, token, tipo, estado";
      $valores = "'$user', '$clave', NULL, '$tipo', 1";
 
-     $insertData = $conexion->query("INSERT INTO $tabla($campos) VALUES($valores)");
+     //$insertData = $conexion->query("INSERT INTO $tabla($campos) VALUES($valores)");
 
 ?>
 
-<?php if($insertData == true):?>
+<?php if($conexion->query("INSERT INTO $tabla($campos) VALUES($valores)")):?>
      <script>
           alert("Datos regristrados...");
           $("#contenido").load("usuarios/principal.php");
