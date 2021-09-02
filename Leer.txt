@@ -1,0 +1,3 @@
+ data: formData, /* No envía datos el formulario porque no envias el array por POST*/
+ Faltaba esta linea en el archivo funciones-usuarios.json,
+ (Nota de practica 1.99)

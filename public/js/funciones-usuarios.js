@@ -16,9 +16,10 @@ $(document).ready(function(){
                 url: "usuarios/save_user.php",
                 type: "POST",
                 dataType: "html",
+                data: formData, /* No enviava datos el formulario porque no envias el array por POST*/
                 cache: false,
                 contentType: false,
-                processData: false,
+                processData: false
             })
             .done(function(res){
                 $("#result-form").html(res);
