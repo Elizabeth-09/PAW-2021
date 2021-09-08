@@ -1,8 +1,11 @@
      <?php
      include '../../../models/conexion.php';
+     include '../../../controllers/procesos.php';
+     include '../../../models/procesos.php';
 
-     $objeto = new ConexBD();
-     $conexion = $objeto->get_conexion();
+
+     //$objeto = new ConexBD();
+     //$conexion = $objeto->get_conexion();
 
      $user = $_POST['user'];
      
@@ -14,18 +17,23 @@
      $campos = "usuario, clave, token, tipo, estado";
      $valores = "'$user','$clave',NULL,'$tipo',1";
 
-     $insertData = $conexion->query("INSERT INTO $tabla($campos) VALUES($valores)");
+     //$insertData = $conexion->query("INSERT INTO $tabla($campos) VALUES($valores)");
 ?>
 <?php if($insertData):?>
-    <script>
-        alert("Datos registrados...");
-        $("#contenido").load("usuarios/principal.php");
-    </script>
-<?php else:?>
-    <script>
-        alert("Error al registrar datos...");
-        $("#contenido").load("usuarios/principal.php");
-    </script>
+    <?php else:?>
+
+        <?php if($insertData):?>
+        <script>
+            alert("Datos registrados...");
+            $("#contenido").load("usuarios/principal.php");
+        </script>
+        <?php else:?>
+        <script>
+            alert("Error al registrar datos...");
+            $("#contenido").load("usuarios/principal.php");
+        </script>
+    <?php endif?>
+
 <?php endif?>
 
 
