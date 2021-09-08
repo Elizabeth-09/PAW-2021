@@ -40,7 +40,7 @@ class Procesos
 {
     $modelo = new ConexBD();
     $conexion = $modelo->get_conexion();
-    $stm = $conexion->prepare($query);
+    $stm = $conexion->query($query);
     $num_rows = $stm->rowCount();
     return $num_rows;
 

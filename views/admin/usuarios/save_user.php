@@ -17,12 +17,19 @@
      $campos = "usuario, clave, token, tipo, estado";
      $valores = "'$user','$clave',NULL,'$tipo',1";
 
+    $query1 = "SELECT * FROM usuarios WHERE usuario = '$user'";
+    $query2 = "INSERT INTO $tabla($campos VALUES($valores)";
      //$insertData = $conexion->query("INSERT INTO $tabla($campos) VALUES($valores)");
 ?>
-<?php if($insertData):?>
+<?php if(CountReg($query1) !=0):?>
+    <script> 
+        alertity.error("Usuario ya existe...");
+        $("#contenido").load("usuarios/principal.php");
+    </script>
+
     <?php else:?>
 
-        <?php if($insertData):?>
+        <?php if(CRUD($query2, "i")):?>
         <script>
             alert("Datos registrados...");
             $("#contenido").load("usuarios/principal.php");
