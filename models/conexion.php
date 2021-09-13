@@ -5,8 +5,8 @@
       {
         if(strtoupper(substr(PHP_OS,0,3)) == "WIN")
         {
-            $user ="poo";
-            $pass ="poo";
+            $user ="root";
+            $pass ="";
             $host ="localhost";
             $bd ="paw"; 
 
