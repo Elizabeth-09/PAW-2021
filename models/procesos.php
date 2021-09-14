@@ -1,16 +1,17 @@
 <?php
-
 class Procesos
 
 {
-    public function isdu($query,$tipo)
+
+    /*Modelo para realiza CRUD*/
+    public function isdu($query,$tipo) // i->Insert / s -> Select / d-> Delete / u-> Update
     {
         $row = NULL;
         $modelo = new ConexBD();
         $conexion = $modelo->get_conexion();
         $stm = $conexion->prepare($query);
 
-        if($tipo == "s" || $tipo == "s")
+        if($tipo == "s" || $tipo == "S")
         {
             $stm->execute();
             while ($result = $stm->fetch())
@@ -30,12 +31,12 @@ class Procesos
             else 
             {
                 $stm->execute();
+                return 1;
             }
         }
     }
 
    /* Modelo para contar registro */
-   
    public function row_data($query)
 {
     $modelo = new ConexBD();

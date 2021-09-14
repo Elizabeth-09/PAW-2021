@@ -51,7 +51,7 @@ function AccesoLogin($user, $passw)
 function CRUD($query,$tipo)
 {
     $consultas = new Procesos();
-    $data =$consultas->isdu($query,$tipo);
+    $data = $consultas->isdu($query,$tipo);
     return $data;
 
 }
@@ -60,8 +60,9 @@ function CRUD($query,$tipo)
 function CountReg($query)
 {
     $consultas = new Procesos();
-    $data =$consultas->row_data($query);
+    $data = $consultas->row_data($query);
     return $data;
 
 }
+
 ?>
