@@ -1,6 +1,6 @@
      <?php
      include '../../../models/conexion.php';
-     include '../../../controllers/procesos.php';
+    include '../../../controllers/prosesos.php';
      include '../../../models/procesos.php';
 
 
@@ -21,6 +21,7 @@
     $query2 = "INSERT INTO $tabla($campos VALUES($valores)";
      //$insertData = $conexion->query("INSERT INTO $tabla($campos) VALUES($valores)");
 ?>
+
 <?php if(CountReg($query1) !=0):?>
     <script> 
         alertity.error("Usuario ya existe...");
