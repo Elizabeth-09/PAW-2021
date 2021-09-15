@@ -67,4 +67,25 @@ $(document).ready(function () {
             });
         event.preventDefault();
     });
+    /*Actualizar la contraseña*/
+    $("#UPDUser").on("submit", function (event) {
+        var tipo = document.getElementById("tipo-user").value;
+
+        var formData = new FormData(document.getElementById("UPDUser"));
+        formData.append("dato", "valor");
+
+        $.ajax({
+            url: "usuarios/update_user.php",
+            type: "POST",
+            dataType: "html",
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false
+        })
+            .done(function (res) {
+                $("#result-form").html(res);
+            });
+        event.preventDefault();
+    });
 });

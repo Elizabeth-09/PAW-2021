@@ -31,7 +31,7 @@
                         <option value="2">Operador</option>
                     </select>
                 </div>
-                <div style="margin-top:10px">
+                <div style="margin-top:20px">
                     <button class="btn btn-primary">Guardar</button>
                 </div>
             </form> 
