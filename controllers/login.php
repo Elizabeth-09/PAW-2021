@@ -2,7 +2,7 @@
     session_start();
     include '../models/conexion.php';
     include '../models/login.php';
-    include 'prosesos.php';
+    include 'procesos.php';
 
     if(isset($_POST['acclogin']))
     {
