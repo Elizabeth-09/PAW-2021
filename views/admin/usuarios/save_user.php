@@ -1,44 +1,42 @@
-     <?php
-     include '../../../models/conexion.php';
-    include '../../../controllers/procesos.php';
-     include '../../../models/procesos.php';
+<?php
+include '../../../models/conexion.php';
+include '../../../controllers/prosesos.php';
+include '../../../models/procesos.php';
 
 
-     //$objeto = new ConexBD();
-     //$conexion = $objeto->get_conexion();
+//$objeto = new ConexBD();
+//$conexion = $objeto->get_conexion();
 
-     $user = $_POST['user'];
-     
-     $clave = password_hash($_POST['clave'],PASSWORD_DEFAULT);
-     
-     $tipo = $_POST['tipo_user'];
+$user = $_POST['user'];
 
-     $tabla = "usuarios";
-     $campos = "usuario, clave, token, tipo, estado";
-     $valores = "'$user','$clave',NULL,'$tipo',1";
-   
-     $query1 = "SELECT * FROM usuarios WHERE usuario = '$user'";
-    $query2 = "INSERT INTO $tabla($campos VALUES($valores)";
+$clave = password_hash($_POST['clave'], PASSWORD_DEFAULT);
 
+$tipo = $_POST['tipo_user'];
+
+$tabla = "usuarios";
+$campos = "usuario, clave, token, tipo, estado";
+$valores = "'$user','$clave',NULL,'$tipo',1";
+
+$query1 = "SELECT * FROM usuarios WHERE usuario = '$user'";
+$query2 = "INSERT INTO $tabla ($campos) VALUES ($valores)";
+
+//$insertData = $conexion->query("INSERT INTO $tabla ($campos) VALUES ($valores)");
 ?>
-<?php if(CountReg($query1)> 0):?>
-    <script> 
-        alertity.error("Usuario ya existe...");
+<?php if (CountReg($query1) != 0) : ?>
+    <script>
+        alertify.error("Usuario ya existe ....");
         $("#contenido").load("usuarios/principal.php");
     </script>
-    <?php else:?>
-        <?php if(CRUD($query2, "i")):?>
+<?php else : ?>
+    <?php if (CRUD($query2, "i")) : ?>
         <script>
-            alertity.success("Datos registrados...");
+            alertify.success("Datos registrados...");
             $("#contenido").load("usuarios/principal.php");
         </script>
-        <?php else:?>
+    <?php else : ?>
         <script>
-            alert("Error al registrar datos...");
+            alertify.error("Error datos no registrados...");
             $("#contenido").load("usuarios/principal.php");
         </script>
-    <?php endif?>
-
-<?php endif?>
-
-
+    <?php endif ?>
+<?php endif ?>

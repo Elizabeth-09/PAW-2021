@@ -31,13 +31,6 @@ session_destroy();
             <div class="col-md-6">
                 <div class="contenlogin">
                     <div class="login">
-                    <?php if (isset($_GET['msj'])):?>
-                        <div class="alert alert-danger" style="margin-bottom: 10px;">
-                            <?php
-                                echo base64_decode($_GET['msj']);
-                            ?>
-                        </div>
-                        <?php endif?>
                         <h3>Bienvenidos/as</h3>
                         <div style="text-align: center;">
                             <form action="" method="POST">
