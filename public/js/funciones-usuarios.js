@@ -33,12 +33,33 @@ $(document).ready(function () {
         $("#result-form").load("usuarios/cambiar_estado.php?idusuario=" + id + "&estado=" + estado);
         event.preventDefault();
     });
-
     /*Cambiar Modal para actualizar clave*/
     $(".upd-key").click(function () {
         var id = $(this).attr("id-user");
         $('#modalKeyUpd').modal('show');
-        $("#passUser").load("usuarios/update_pass.php?idusuario=" + id);
+        $("#passUser").load("usuarios/updateData_pass.php?idusuario=" + id);
+    });   
+
+    /* Actualizar contraseña */
+    $("#UpdPass").on("submit",function(event)
+    {
+        var formData =  new FormData (document.getElementById("UpdPass"));
+        formData.append("dato","valor");
+
+        $.ajax({
+            url:"usuarios/update_passw.php",
+            type: "POST",
+            dataType: "html",
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false
+
+        })
+        .done(function(res){
+            $("#result-form").html(res);
+        });
+        event.preventDefault();
     });
     /*Cargar Modal para actualizar usuario..*/
     $(".upd-user").click(function () {
