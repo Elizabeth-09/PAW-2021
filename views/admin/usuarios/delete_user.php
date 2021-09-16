@@ -3,19 +3,20 @@ include '../../../models/conexion.php';
 include '../../../controllers/prosesos.php';
 include '../../../models/procesos.php';
 
-$idusuario = $_POST['idusuario'];
-$user = $_POST['user'];
+$idusuario=$_GET['idusuario'];
+$usuario = $_GET['usuario'];
+
+$usuario = CRUD("DELETE FROM usuarios WHERE idusuario='$idusuario'", "d");
+
 ?>
-<?php if (CRUD("DELETE usuarios SET usuario='$user', WHERE idusuario='$idusuario'","d")) : ?>
+<?php if($usuario): ?>
     <script>
-        alertify.success("Usuario Elimando...");
-        $('#UserDelete').modal('hide');
+        alertify.success("Usuario Eliminado...");
         $("#contenido").load("usuarios/principal.php");
     </script>
-<?php else : ?>
+<?php else: ?>
     <script>
         alertify.error("Error al eliminar usuario...");
-        $('#UserDelete').modal('hide');
         $("#contenido").load("usuarios/principal.php");
     </script>
 <?php endif ?>
