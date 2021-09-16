@@ -7,6 +7,7 @@ $idusuario = $_GET['idusuario'];
 
 $dataUser = CRUD("SELECT * FROM usuarios WHERE idusuario='$idusuario'", "s");
 ?>
+
 <script src="../../public/js/funciones-usuarios.js"></script>
 <form id="UPDPass" onsubmit="verificarPasswords(); return false">
     <div class="input-group mb-3">
