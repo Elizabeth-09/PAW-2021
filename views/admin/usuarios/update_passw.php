@@ -1,6 +1,6 @@
 <?php
     include '../../../models/conexion.php';
-    include '../../../controllers/procesos.php';
+    include '../../../controllers/prosesos.php';
     include '../../../models/procesos.php';
 
         //$objeto = new ConexionBD();
