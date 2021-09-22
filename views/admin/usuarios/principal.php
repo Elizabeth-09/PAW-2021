@@ -1,9 +1,45 @@
 <script src="../../public/js/funciones-navbar.js"></script>
 <script src="../../public/js/funciones-usuarios.js"></script>
+<?php
+
+    session_start();
+    include '../../../models/conexion.php';
+    include '../../../controllers/procesos.php';
+    include '../../../models/procesos.php';
+    $cont = 0;
+    $pagina = 0;
+
+    if(isset($_GET["num"]));
+    {
+        $pagina = $_GET["num"];
+
+    }
+
+    if (!$pagina)
+    {
+        $inicio = 0;
+        $pagina = 1;
+    }
+    else 
+    {
+        $inicio =($pagina - 1)* $registros;
+
+    }
+
+    $query = "SELECT * FROM usuarios";
+
+    $dataUser = CRUD("SELECT * FROM usuarios ORDER BY id_usuario LIMIT $inicio,$registros", "s");
+
+    $num_registro = CountReg($query);
+    $paginas = ceil($num_registro/$registros);
+
+?>
+
 <div class="card">
     <div class="card-header bg-dark text-white">
-        <b>Panel Usuarios</b>
+            <b>Panel Usuarios</b>
     </div>
+
     <div class="card-body">
         <div id="result-form">
             <div class="row">
@@ -38,6 +74,33 @@
                 </div>
                 <div class="col md-8">
                     <?php include 'table_usuarios.php';?>
+                    <?php if($num_registro > $registros):?>
+                        <?php if($pagina == 1):?>
+                        <div style="text-align: center;">
+                            <a href="" class="btn pagina" v-num="<?php echo ($pagina + 1); ?>">
+                            num-reg="<?php echo $registros;?>"
+                            <i class="fas fa-arrow-alt-circle-right fa-2x"></i>
+                            </a>
+                        </div>
+                        <?php elseif($pagina == $paginas):?>
+                        <div style="text-align: center;">
+                            <a href="" class="btn pagina" v-num="<?php echo ($pagina - 1); ?>">
+                            num-reg="<?php echo $registros;?>"
+                            <i class="fas fa-arrow-alt-circle-right fa-2x"></i>
+                            </a>
+                        </div>
+                    <?php else: ?>
+                        <div style="text-align: center;">
+                            <a href="" class="btn pagina" v-num="<?php echo ($pagina + 1); ?>">
+                            num-reg="<?php echo $registros;?>"
+                            <i class="fas fa-arrow-alt-circle-right fa-2x"></i>
+                            </a>
+                            <a href="" class="btn pagina" v-num="<?php echo ($pagina - 1); ?>">
+                            num-reg="<?php echo $registros;?>"
+                            <i class="fas fa-arrow-alt-circle-right fa-2x"></i>
+                            </a>
+                        </div>
+                    <?php endif ?>
                 </div>
             </div>
         </div>      

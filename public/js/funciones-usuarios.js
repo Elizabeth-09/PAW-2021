@@ -96,4 +96,12 @@ $(document).ready(function () {
         $("#result-form").load("usuarios/delete_usuario.php?idusuario=" + id + "&eliminar=" + eliminar);
         event.preventDefault();
     });
+    /*Paginado*/
+    $("a.pagina").click(function(event) {
+        var num,reg;
+        num = $(this).attr("v-num");
+        reg = $(this).attr("num-reg");
+        $("#contenido").load("usuarios/principal.php?num=" + num + "&num_reg=" + reg);
+        event.preventDefault();
+    });
 });

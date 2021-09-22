@@ -1,10 +1,5 @@
 <?php
-include '../../../models/conexion.php';
-include '../../../controllers/procesos.php';
-include '../../../models/procesos.php';
 
-$dataUser = CRUD("SELECT * FROM usuarios", "s");
-$cont = 0;
 ?>
 
 <table class="table table-borderless table-responsive-xl">
