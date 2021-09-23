@@ -1,5 +1,6 @@
 <script src="../../public/js/funciones-navbar.js"></script>
 <script src="../../public/js/funciones-usuarios.js"></script>
+
 <?php
 
     session_start();
@@ -36,9 +37,8 @@
 ?>
 
 <div class="card">
-    <div class="card-header bg-dark text-white">
+<div class="card-header bg-dark text-white">
             <b>Panel Usuarios</b>
-    </div>
 
     <div class="card-body">
         <div id="result-form">
