@@ -1,8 +1,10 @@
-<?php
-
-?>
-
-<table class="table table-borderless table-responsive-xl">
+<style>
+    .cHead {
+        vertical-align: middle;
+        text-align: center;
+    }
+</style>
+<table class="table table-borderless tables-hover table-responsive-xl">
     <thead class="bg-dark text-white cHead">
         <tr>
             <th>N°</th>
