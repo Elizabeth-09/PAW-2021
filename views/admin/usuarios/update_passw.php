@@ -1,7 +1,7 @@
 <?php
-include '../../../models/conexion.php';
-include '../../../controllers/procesos.php';
-include '../../../models/procesos.php';
+    include '../../../models/conexion.php';
+    include '../../../controllers/procesos.php';
+    include '../../../models/procesos.php';
 
         //$objeto = new ConexionBD();
         //$conexion = $objeto->get_conexion();

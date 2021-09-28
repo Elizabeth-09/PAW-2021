@@ -15,13 +15,8 @@ $dataUser = CRUD("SELECT * FROM usuarios WHERE idusuario='$idusuario'", "s");
         <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">Nueva contraseña: </span>
         </div>
-        <input type="password" name="clave" class="form-control" required="ON">
+        <input type="password" name="clave" class="form-control" required="ON" placeholder="Ingresar nueva contraseña">
     </div>
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Confirmar contraseña: </span>
-        </div>
-        <input type="password" name="clave" class="form-control" required="ON">
-    </div>
-        <button class="btn btn-primary">Actualizar</button>
+
+        <button class="btn btn-success">Actualizar</button>
 </form>

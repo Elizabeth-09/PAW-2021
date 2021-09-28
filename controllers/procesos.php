@@ -1,65 +1,74 @@
 <?php
-function AccesoLogin($user, $passw)
-{
-    $consultas = new Login();
-    $data = $consultas->GetDataUser($user);
 
-    if ($data) {
-        foreach ($data as $result) {
-            $idusuario = $result['idusuarios'];
-            $hash = $result['clave'];
-            $tipo = $result['tipo'];
-            $estado = $result['estado'];
-        }
-        if ($estado == 1)
+    function AccesoLogin($user, $passw)
+    {
+        $consultas = new Login();
+        $data = $consultas->getDataUser($user);
+
+        if($data)
         {
-            if (password_verify($passw,$hash))
+            foreach ($data AS $result)
             {
-                if($tipo==1) //Vista Admin
+                $idusuario = $result['idusuario'];
+                $hash = $result['clave'];
+                $tipo = $result['tipo'];
+                $estado = $result['estado'];
+            }
+
+            if($estado == 1)
+            {
+                if(password_verify($passw,$hash))
                 {
-                    $_SESSION["idusuario"] = $idusuario;
-                    $_SESSION["user"] = $user;
-                    $_SESSION["tipo"] = $tipo;
-                    header("Location: ../views/admin/");
+                    if($tipo == 1) //vista de Administrador
+                    {
+                        $_SESSION["idusuario"] = $idusuario;
+                        $_SESSION["user"] = $user;
+                        $_SESSION["tipo"] = $tipo;
+                        header("Location: ../views/admin/");
+                    }
+                    else
+                    {
+                        $_SESSION["idusuario"] = $idusuario;
+                        $_SESSION["user"] = $user;
+                        $_SESSION["tipo"] = $tipo;
+                        header("Location: ../views/operador/");
+                    }
                 }
                 else
                 {
-                    $_SESSION["idusuario"] = $idusuario;
-                    $_SESSION["user"] = $user;
-                    $_SESSION["tipo"] = $tipo;
-                    header("Location: ../views/operador/");
-
+                    header("Location: ../index.php?msj=".base64_encode
+                    ("Contraseña incorrecta ..."));
                 }
             }
             else
             {
-                header("Location:../index.php?msj=".base64_encode("Contraseña incorrecta...")); 
+                header("Location: ../index.php?msj=".base64_encode
+                ("El usuario no tiene permisos de acceso ..."));
             }
         }
         else
         {
-        header("Location:../index.php?msj=".base64_encode("El usuario no tiene permisos de acceso..."));  
+            header("Location: ../index.php?msj=".base64_encode
+            ("El usuario no existe ..."));
         }
-
+        
     }
-    else
+
+    /*Funcion para realizar un CRUD(Crear,leer,actualizar,borrar)*/
+    function CRUD($query,$tipo)
     {
-    header("Location:../index.php?msj=".base64_encode("El usuario no existe..."));  
+        $consultas = new Procesos();
+        $data = $consultas->isdu($query,$tipo);
+        return $data;
     }
-}
 
-/*Modelo para relizar un CRUD*/
-function CRUD($query,$tipo)
-{
-    $consultas = new Procesos();
-    $data = $consultas->isdu($query,$tipo);
-    return $data;
-}
-/*Modelo para contar registros*/
-function CountReg($query)
-{
-    $consultas = new Procesos();
-    $data = $consultas->row_data($query);
-    return $data;
-}
+    /*Funcion para contar registros*/
+    function CountReg($query)
+    {
+        $consultas = new Procesos();
+        $data = $consultas->row_data($query);
+        return $data;
+    }
+
+
 ?>

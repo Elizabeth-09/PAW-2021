@@ -1,5 +1,7 @@
-<?php 
+<?php
+
     session_start();
+   
     include '../models/conexion.php';
     include '../models/login.php';
     include 'procesos.php';
@@ -7,14 +9,13 @@
     if(isset($_POST['acclogin']))
     {
         $user = $_POST['user'];
-        echo "<br>";
         $passw = $_POST['passw'];
-
-        AccesoLogin($user, $passw);
         
+        AccesoLogin($user, $passw);
     }
     else
     {
         header("Location: ../index.php");
     }
+
 ?>
