@@ -11,7 +11,7 @@
 
     if(isset($_GET["num"]));
     {
-        $pagina = $_GET["num"];
+
     }
 
     $registros = 1;
