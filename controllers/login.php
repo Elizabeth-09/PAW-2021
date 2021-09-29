@@ -5,7 +5,7 @@
     include '../models/conexion.php';
     include '../models/login.php';
     include 'procesos.php';
-
+    
     if(isset($_POST['acclogin']))
     {
         $user = $_POST['user'];
@@ -13,9 +13,13 @@
         
         AccesoLogin($user, $passw);
     }
+    elseif(isset($_POST['olvIde']))
+    {
+        header("Location: ../views/olvide_clave.php");
+    }
     else
     {
         header("Location: ../index.php");
     }
-
+    
 ?>
