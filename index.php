@@ -95,8 +95,8 @@
                             </div>
                         </form>
                         <div style="margin-top: 10px;">
-                            <form action="./controllers/login.php" method="$_POST">
-                            <button class="btn btn-info" name="olvide">Olvide Contraseña</button>
+                            <form action="./controllers/login.php" method="POST">
+                            <button class="btn btn.info" name="olvide">Olvide Contraseña</button>
                             </form>
                         </div>
                     </div>
