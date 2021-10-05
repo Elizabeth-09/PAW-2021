@@ -1,8 +1,8 @@
 <?php
 session_start();
-include '../../../Models/conexion.php';
-include '../../../Controllers/prosesos.php';
-include '../../../Models/procesos.php';
+include '../../../models/conexion.php';
+include '../../../controllers/prosesos.php';
+include '../../../models/procesos.php';
 $cont = 0;
 $pagina = 0;
 

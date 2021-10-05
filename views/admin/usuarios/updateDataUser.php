@@ -1,7 +1,7 @@
 <?php
-include '../../../Models/conexion.php';
-include '../../../Controllers/prosesos.php';
-include '../../../Models/procesos.php';
+include '../../../models/conexion.php';
+include '../../../controllers/prosesos.php';
+include '../../../models/procesos.php';
 
 $idusuario = $_GET['idusuario'];
 
@@ -17,7 +17,7 @@ if ($result['tipo'] == 1) {
     $tipoUser = "Operador";
 }
 ?>
-<script src="../../Public/js/funciones-usuarios.js"></script>
+<script src="../../public/js/funciones-usuarios.js"></script>
 <form id="UPDUser">
     <input type="hidden" name="idusuario" value="<?php echo $idusuario; ?>">
     <div class="input-group mb-3">

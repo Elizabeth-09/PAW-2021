@@ -12,13 +12,13 @@ session_destroy();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <!--CSS-->
-    <link rel="stylesheet" href="./Public/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./Public/css/boststrap-theme.css">
-    <link rel="stylesheet" href="./Public/css/estilo.css">
+    <link rel="stylesheet" href="./public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./public/css/boststrap-theme.css">
+    <link rel="stylesheet" href="./public/css/estilo.css">
     <!--JS-->
-    <script src="./Public/js/jquery-3.5.1.slim.min.js"></script>
-    <script src="./Public/js/jquery-1.9.1.min.js"></script>
-    <script src="./Public/js/bootstrap.min.js"></script>
+    <script src="./public/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="./public/js/jquery-1.9.1.min.js"></script>
+    <script src="./public/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/05f4903dc9.js" crossorigin="anonymous"></script>
 </head>
 
@@ -65,7 +65,7 @@ session_destroy();
                                 ?>
                             </div>
                         <?php endif ?>
-                        <form action="./Controllers/login.php" method="POST" class="border p-3 formlogin">
+                        <form action="./controllers/login.php" method="POST" class="border p-3 formlogin">
                             <div style="margin-bottom: 10px; color:white;text-align:center;font-weight:bold">
                                 <b>Iniciar sesión</b>
                             </div>
@@ -90,7 +90,7 @@ session_destroy();
                             </div>
                         </form>
                         <div style="margin-top: 10px;">
-                            <form action="./Controllers/login.php" method="POST">
+                            <form action="./controllers/login.php" method="POST">
                                 <button class="btn btn-info" name="olvide">Olvide contraseña</button>
                             </form>
                         </div>
