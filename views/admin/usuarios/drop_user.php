@@ -1,7 +1,7 @@
 <?php
-include '../../../models/conexion.php';
-include '../../../controllers/prosesos.php';
-include '../../../models/procesos.php';
+include '../../../Models/conexion.php';
+include '../../../Controllers/prosesos.php';
+include '../../../Models/procesos.php';
 
 $idusuario = $_GET['idusuario'];
 

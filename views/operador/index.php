@@ -1,6 +1,6 @@
 <?php
 session_start();
-include'../../controllers/redireccionar.php';
+include'../../Controllers/redireccionar.php';
 $user = $_SESSION["user"];
 $redic = new Rd();
 $redic->Operador();
