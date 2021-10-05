@@ -1,8 +1,8 @@
 <?php 
     session_start();
-    include '../Models/conexion.php';
-    include '../Models/login.php';
-    include '../Models/procesos.php';
+    include '../models/conexion.php';
+    include '../models/login.php';
+    include '../models/procesos.php';
     include 'prosesos.php';
 
     if(isset($_POST['acclogin']))
