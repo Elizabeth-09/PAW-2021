@@ -1,27 +1,23 @@
 <?php
-    include '../../../models/conexion.php';
-    include '../../../controllers/procesos.php';
-    include '../../../models/procesos.php';
 
-        //$objeto = new ConexionBD();
-        //$conexion = $objeto->get_conexion();
-    
-        $idusuario = $_POST['idusuario'];
-        $user = $_POST['user'];
-        $tipo = $_POST['tipo_user'];
+include '../../../Models/conexion.php';
+include '../../../Controllers/prosesos.php';
+include '../../../Models/procesos.php';
 
+echo $idusuario = $_POST['idusuario'];
+echo $user = $_POST['user'];
+echo $tipo = $_POST['tipo_user'];
 ?>
-
-<?php if(CRUD("UPDATE usuarios SET usuario = '$user', tipo='$tipo' WHERE idusuario ='$idusuario'", "u")):?>
+<?php if (CRUD(" UPDATE usuarios SET usuario ='$user',tipo='$tipo' WHERE idusuario='$idusuario'", "u")) : ?>
     <script>
-        alertify.success("Usuario actualizado...");
+        alertify.success("Usuario Actualizado...");
         $('#UserUpd').modal('hide');
         $("#contenido").load("usuarios/principal.php");
     </script>
-<?php else:?>
+<?php else : ?>
     <script>
-        alertify.error("Error al actualizar usuario...");
+        alert("Error al actualizar usuarip...");
         $('#UserUpd').modal('hide');
         $("#contenido").load("usuarios/principal.php");
     </script>
-<?php endif?>
+<?php endif ?>

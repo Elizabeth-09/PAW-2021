@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-09-2021 a las 22:29:15
--- Versión del servidor: 10.4.17-MariaDB
--- Versión de PHP: 8.0.1
+-- Tiempo de generación: 20-08-2021 a las 00:26:18
+-- Versión del servidor: 10.4.20-MariaDB
+-- Versión de PHP: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,24 +28,21 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `usuarios` (
-  `idusuario` int(11) NOT NULL,
-  `usuario` varchar(50) DEFAULT NULL,
+  `idusuarios` int(11) NOT NULL,
+  `usuario` varchar(20) DEFAULT NULL,
   `clave` varchar(255) DEFAULT NULL,
-  `token` varchar(12) DEFAULT NULL,
+  `token` varchar(10) DEFAULT NULL,
   `tipo` int(11) DEFAULT NULL,
-  `estado` int(11) NOT NULL
+  `estado` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`idusuario`, `usuario`, `clave`, `token`, `tipo`, `estado`) VALUES
-(8, 'elizabeth', '$2y$10$FWGR4ZuSHI9EEIo2oamkjulPAOAJtx9bAYXeu6yz08HMQxoohJMk2', NULL, 1, 1),
-(10, 'kenia', '$2y$10$ivVoA5x5NmD85I59A1KeMu7LglUYhu.oSKJ1Cmp.KN4O1ov1B8X1K', NULL, 1, 1),
-(12, 'manuel', '$2y$10$oygB/BF2GDDBei/SqDowC.9.6edWCkmC/8j7T1JZC34oRhpHRTgrS', NULL, 2, 1),
-(13, 'daniel', '$2y$10$k5HeULCskuYeoWJ2hH3vB.MbrADfyGFqZqlmDQpYC6UW5ES3yDe2C', NULL, 2, 1),
-(14, 'mateo', '$2y$10$VHGVJcFfSdqnLD6DAPKB2uRwfsUFLEl/PWkHDlAC/0PK3TV30AXMG', NULL, 1, 0);
+INSERT INTO `usuarios` (`idusuarios`, `usuario`, `clave`, `token`, `tipo`, `estado`) VALUES
+(2, 'Luz', '$2y$10$1q2f2agKIwwrPuLzQmcVbOuz7THdM8WiXIPETnycG3Bw3AXg6V3ku', NULL, 2, 1),
+(3, 'Admin', '$2y$10$vFxIkWTgl03n/O730TvfUe.hjrLfUECtZWkAaca6VSrMWnQEPKoWG', NULL, 1, 1);
 
 --
 -- Índices para tablas volcadas
@@ -55,7 +52,7 @@ INSERT INTO `usuarios` (`idusuario`, `usuario`, `clave`, `token`, `tipo`, `estad
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`idusuario`);
+  ADD PRIMARY KEY (`idusuarios`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -65,7 +62,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `idusuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
