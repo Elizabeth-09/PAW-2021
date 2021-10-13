@@ -7,9 +7,9 @@
 
     if(isset($_POST['acclogin']))
     {
-       echo $user = $_POST['user'];
+       $user = $_POST['user'];
         echo "<br>";
-        echo $passw = $_POST['passw'];
+        $passw = $_POST['passw'];
 
         AccesoLogin($user, $passw);
         

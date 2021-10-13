@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cambio Clave</title>
     <!--CSS-->
-    <link rel="stylesheet" href="../Public/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../Public/css/boststrap-theme.css">
-    <link rel="stylesheet" href="../Public/css/estilo.css">
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/boststrap-theme.css">
+    <link rel="stylesheet" href="../public/css/estilo.css">
     <!--JS-->
-    <script src="../Public/js/jquery-3.5.1.slim.min.js"></script>
-    <script src="../Public/js/jquery-1.9.1.min.js"></script>
-    <script src="../Public/js/bootstrap.min.js"></script>
+    <script src="../public/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="../public/js/jquery-1.9.1.min.js"></script>
+    <script src="../public/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/05f4903dc9.js" crossorigin="anonymous"></script>
 </head>
 
