@@ -15,7 +15,7 @@ function AccesoLogin($user, $passw)
         {
             if (password_verify($passw,$hash))
             {
-                if($tipo==1) //Vista Admin
+                if($tipo==1)
                 {
                     $_SESSION["idusuario"] = $idusuario;
                     $_SESSION["user"] = $user;
@@ -55,14 +55,14 @@ function CRUD($query,$tipo)
     $data = $consultas->isdu($query,$tipo);
     return $data;
 }
-/*Modelo para contar registros*/
+/*Funcion para contar registros*/
 function CountReg($query)
 {
     $consultas = new Procesos();
     $data = $consultas->row_data($query);
     return $data;
 }
-// buscavalor procesos Controllers//
+//Funion para buscar valores//
 function buscavalor($tabla,$campo,$condicion)
 {
     $valor = NULL;
@@ -78,7 +78,7 @@ function buscavalor($tabla,$campo,$condicion)
        return $valor;
     }
 }
-//Desde aqui lo edite//
+//Funcion para el token//
 function Token($length)
 {
     $key = '';
@@ -90,7 +90,7 @@ function Token($length)
     }
     return $key;
 }
-//Hasta aqui//
+//Funcion para el Email//
 function Email($email,$token)
 {
     $desde = "paw@gmail.com";
@@ -101,6 +101,7 @@ function Email($email,$token)
 
     mail($email,"Solicitud de Token",$sms,$cabecera);
 }
+//Funcion para cambio de clave//
 function CambioClave($token,$passw1,$passw2)
 {
     $buscaToken = buscavalor("usuarios","COUNT(token)","token ='$token'");
@@ -133,5 +134,12 @@ function CambioClave($token,$passw1,$passw2)
         header("Location: ../views/cambio_clave.php");
     }
 
+}
+
+//Funcioon para cargar Imagenes//
+function CargarIMG($tmp_dir,$newName,$path)
+{
+    mkdir($path, 0777, true);
+    
 }
 ?>
