@@ -71,6 +71,18 @@ $paginas = ceil($num_registro / $registros);
                                 <option value="2">Operador</option>
                             </select>
                         </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupFileAddon01">Fotos</span>
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" name="imagen" id="imagen" aria-describedby="inputGroupFile01">
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="" width="200px" alt="" id="muestraImagen">
+                        </div>
                         <div style="margin-top:10px">
                             <button class="btn btn-primary">Guardar</button>
                         </div>
