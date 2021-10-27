@@ -10,8 +10,10 @@
        $user = $_POST['user'];
         echo "<br>";
         $passw = $_POST['passw'];
+        $campo = $_POST['usuarios'];
 
-        AccesoLogin($user, $passw);
+
+        AccesoLogin($user,$passw,$tabla,$campo);
         
     }
     elseif(isset($_POST['olvide']))
@@ -23,6 +25,8 @@
         $token = $_POST['token'];
         $passw1 = $_POST['passw1'];
         $passw2 = $_POST['passw2'];
+
+
 
         CambioClave($token,$passw1,$passw2);
     }

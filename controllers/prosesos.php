@@ -1,8 +1,8 @@
 <?php
-function AccesoLogin($user, $passw)
+function AccesoLogin($user,$passw,$tabla,$campo)
 {
     $consultas = new Login();
-    $data = $consultas->GetDataUser($user);
+    $data = $consultas->GetDataUser($user,$tabla,$campo);
 
     if ($data) {
         foreach ($data as $result) {
