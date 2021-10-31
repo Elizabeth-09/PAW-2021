@@ -3,14 +3,12 @@
     include '../models/conexion.php';
     include '../models/login.php';
     include '../models/procesos.php';
-    include 'prosesos.php';
+    include 'procesos.php';
 
     if(isset($_POST['acclogin']))
     {
         $user = $_POST['user'];
         $passw = $_POST['passw'];
-        $campo = $_POST['usuarios'];
-        $tabla = $_POST['tabla'];
 
 
         AccesoLogin($user,$passw,$tabla,$campo);
