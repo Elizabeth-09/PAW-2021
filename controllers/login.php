@@ -9,6 +9,8 @@
     {
         $user = $_POST['user'];
         $passw = $_POST['passw'];
+        $campo = $_POST['campo'];
+        $tabla = $_POST['tabla'];
 
 
         AccesoLogin($user,$passw,$tabla,$campo);
